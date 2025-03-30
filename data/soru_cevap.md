@@ -83,3 +83,50 @@ Ben kodu epeyce ilerlettim ve açıklamalar eklemeyi düşünüyorum, her satır
 
 **Soru:** Hocam merhaba bir sey sormak isterim bu sene benim okul bitiyor lakin global ai platformlarindaki egitimleri almaya bootcamplere katilmaya devam edebilir miyim cok istiyorum katilmak ekosisteme dahil olmak
 **Cevap:** Merhabalar, Bootcampler devam edecek tabiki katılabilirsiniz, genel Zulip sunucusunda da istediğiniz gibi sorular sorabilirsiniz ayrıca Youtube kanalında da eğitimlerin videosu bulunmakta yararlanabilirsiniz
+
+
+‎**Soru:** Sertifika alabilmek için yayınların  kaçına katılım sağlamalıyım?
+‎**Cevap:** En az %50 katılım zorunluluğu vardır. Mentor toplantılarına katılım zorunlu değildir.
+‎
+‎**Soru:** Sertifika yüklememiz için atılan formda tek bir dosya yükleyebiliyorum ancak 2 sertifika yüklememem gerekiyor. Ne yapabilirim?
+‎**Cevap:** Sahip olduğunuz iki sertifika görselini tek bir ZIP dosyası halinde iletebilirsiniz. Böylece tüm sertifikalar eksiksiz bir şekilde yüklenmiş olur. 
+‎
+‎**Soru:** Videolarda Türkçe dublaj bulunuyor ve senkron olmadığından dolayı biraz kafa karışıklığına sebep oluyor. Ne yapabilirim?
+‎**Cevap:** 
+‎
+‎**Soru:** Eğitimlerin İngilizce playlist linki var mıdır?
+‎**Cevap:**
+‎
+‎**Soru:** Eğitim programını tamamlamama ve bitirme sınavını geçmeme rağmen ilerleme yüzdesi eksik görünüyor ve sertifikaya ulaşamıyorum.
+‎**Cevap:** ‎[Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme" veya "görsellerin görünmemesi" gibi teknik sorunlarla ilgili olarak taleplerinizi daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+‎**Soru:** Merhabalar eğitimi tamamladım bütün videoları izledim ama bir ilerleme kaydedilmedi. Formdan da talep oluşturmuştum. Sertifikayı da alamıyorum yardımcı olur musunuz.
+‎**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme" veya "görsellerin görünmemesi" gibi teknik sorunlarla ilgili olarak taleplerinizi daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+‎**Soru:** Kurs sitesinde tanımlanmış kurslara erişemiyorum yardımcı olur musunuz?
+‎**Cevap:** ‎Eğer kabul maili aldıysanız size iletilen şifre ve mail adresinizle giriş yapabilirsiniz. Yoğun katılımcı trafiğinden dolayı bazen teknik aksaklıklar yaşanabilir. Böyle bir durumda "Şifremi unuttum" seçeneğini kullanarak şifrenizi sıfırlayabilir ve tekrar giriş yapmayı deneyebilirsiniz.
+‎
+‎**Soru:**  "launch me" butonuna tıklayınca type form açılmıyor.
+‎**Cevap:** Yaşadığınız teknik sorunlarınızı linkteki forma iletebilirsiniz.‎[Form](https://forms.gle/vwgAbR4pusb7DHWG7)
+
+‎**Soru:** Kurslara nereden ulaşabilirim?
+‎**Cevap:**  [courses.10million.ai](https://courses.10million.ai) adresine giderek kayıtlı mail adresin ile giriş yaptıktan sonra kurslar ana sayfada gözükecektir.
+‎
+‎**Soru:** Sınavlardaki görsel sorularda sadece şıklar gözüküyor. Yardımcı olur musunuz?
+‎**Cevap:** Merhaba, ad blocker kullanıyorsanız kapatıp tekrar deneyiniz. Eğer sorununuz hala devam ediyor ise  [Teknik Destek formunu](https://forms.gle/vwgAbR4pusb7DHWG7) doldurabilirsiniz.
+‎
+‎**Soru:** Toplantılara nasıl katılırım?
+‎**Cevap:**  #**03. Duyurular**  kısmından toplantı linklerine ulaşabilirsiniz.
+‎
+‎**Soru:** Merhaba teknik sorun formunu doldurdum, tahmini ne zaman geri dönüş alırım?
+‎**Cevap:** Formu doldurduktan sonra en kısa sürede problem çözülecektir.
+‎
+‎**Soru:** Merhaba, eğitimleri izlemek için sisteme giriyorum ama beyaz ekran veriyor ne yapacağım?
+‎**Cevap:**  Karşılaştığınız teknik sorunları [Teknik Destek formunu](https://forms.gle/vwgAbR4pusb7DHWG7) doldurarak bize iletebilirsiniz.
+‎
