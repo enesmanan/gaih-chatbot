@@ -83,3 +83,125 @@ Ben kodu epeyce ilerlettim ve açıklamalar eklemeyi düşünüyorum, her satır
 
 **Soru:** Hocam merhaba bir sey sormak isterim bu sene benim okul bitiyor lakin global ai platformlarindaki egitimleri almaya bootcamplere katilmaya devam edebilir miyim cok istiyorum katilmak ekosisteme dahil olmak
 **Cevap:** Merhabalar, Bootcampler devam edecek tabiki katılabilirsiniz, genel Zulip sunucusunda da istediğiniz gibi sorular sorabilirsiniz ayrıca Youtube kanalında da eğitimlerin videosu bulunmakta yararlanabilirsiniz
+
+
+
+‎**Soru:** Sertifika alabilmek için yayınların  kaçına katılım sağlamalıyım?
+‎**Cevap:** En az %50 katılım zorunluluğu vardır. Mentor toplantılarına katılım zorunlu değildir.
+‎
+‎**Soru:** Sertifika yüklememiz için atılan formda tek bir dosya yükleyebiliyorum ancak 2 sertifika yüklememem gerekiyor. Ne yapabilirim?
+‎**Cevap:** Sahip olduğunuz iki sertifika görselini tek bir ZIP dosyası halinde iletebilirsiniz. Böylece tüm sertifikalar eksiksiz bir şekilde yüklenmiş olur. 
+‎
+‎**Soru:** Videolarda Türkçe dublaj bulunuyor ve senkron olmadığından dolayı biraz kafa karışıklığına sebep oluyor. Ne yapabilirim?
+‎**Cevap:** 
+‎
+‎**Soru:** Eğitimlerin İngilizce playlist linki var mıdır?
+‎**Cevap:** İngilizce versiyon için şu an bir playlist paylaşımı bulunmamaktadır, ancak bu konudaki öneriniz ekibimize iletilecektir. Eğitim içeriklerini daha iyi bir deneyimle sunabilmek için çalışmalarımız devam ediyor.
+
+Teşekkürler ve iyi öğrenmeler dileriz!
+‎
+‎**Soru:** Eğitim programını tamamlamama ve bitirme sınavını geçmeme rağmen ilerleme yüzdesi eksik görünüyor ve sertifikaya ulaşamıyorum.
+‎**Cevap:** ‎[Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme" veya "görsellerin görünmemesi" gibi teknik sorunlarla ilgili olarak taleplerinizi daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+‎
+‎**Soru:** Merhabalar eğitimi tamamladım bütün videoları izledim ama bir ilerleme kaydedilmedi. Formdan da talep oluşturmuştum. Sertifikayı da alamıyorum yardımcı olur musunuz.
+‎**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme" veya "görsellerin görünmemesi" gibi teknik sorunlarla ilgili olarak taleplerinizi daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+‎**Soru:** Kurs sitesinde tanımlanmış kurslara erişemiyorum yardımcı olur musunuz?
+‎**Cevap:** 
+‎- Eğer kabul maili aldıysanız size iletilen şifre ve mail adresinizle giriş yapabilirsiniz. Yoğun katılımcı trafiğinden dolayı bazen teknik aksaklıklar yaşanabilir.
+- ‎Böyle bir durumda "Şifremi unuttum" seçeneğini kullanarak şifrenizi sıfırlayabilir ve tekrar giriş yapmayı deneyebilirsiniz.
+‎
+‎
+‎**Soru:** "launch me" butonuna tıklayınca type form açılmıyor.
+‎**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme", "görsellerin görünmemesi" gibi veya herhangi teknik sorunlarınızı daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+
+‎**Soru:** Kurslara nereden ulaşabilirim?
+‎**Cevap:**  [courses.10million.ai](https://courses.10million.ai) adresine giderek kayıtlı mail adresin ile giriş yaptıktan sonra kurslar ana sayfada gözükecektir.
+‎
+
+‎**Soru:** Sınavlardaki görsel sorularda sadece şıklar gözüküyor. Yardımcı olur musunuz?
+‎**Cevap:** ‎[Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme" veya "görsellerin görünmemesi" gibi teknik sorunlarla ilgili olarak taleplerinizi daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+‎
+‎**Soru:** Toplantılara nasıl katılırım?
+‎**Cevap:**  #**03. Duyurular**  kısmından toplantı linklerine ulaşabilirsiniz.
+‎
+
+‎**Soru:** Merhaba teknik sorun formunu doldurdum, tahmini ne zaman geri dönüş alırım?
+‎**Cevap:** Formu doldurduktan sonra sorununuz en kısa sürede çözüme kavuşturulacaktır.
+‎
+‎
+‎**Soru:** Merhaba, eğitimleri izlemek için sisteme giriyorum ama beyaz ekran veriyor ne yapacağım?
+‎**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme", "görsellerin görünmemesi" gibi veya herhangi teknik sorunlarınızı daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+
+**Soru:** Eğitim videolarını izlememe rağmen izlendi olarak görünmüyor. Ayrıca bitirme sorularındaki eşleştirme soruları telefondan yapılamıyor ve bazı soruların görselleri çıkmıyor.
+**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme", "görsellerin görünmemesi" gibi veya herhangi teknik sorunlarınızı daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+
+**Soru:** Quize girdim fakat resimli sorular görünmüyor
+**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme", "görsellerin görünmemesi" gibi veya herhangi teknik sorunlarınızı daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+‎
+**Soru:** Merhaba, Program sonlanmış olsa bile eğitim platformu olan 10millionai daki eğitim videolarına erişim sağlayabilir miyiz?
+**Cevap:** Evet, program sona ermiş olsa da platforma erişiminiz devam etmektedir.
+
+**Soru:** 10millionai platform linki nedir?
+**Cevap:** 10millionai platform linki : [courses.10million.ai](https://courses.10million.ai)
+
+**Soru:** Merhaba 10millionai a nasıl giriş yapıyoruz, bilgi alabilir miyim?
+**Cevap:**
+‎- Eğer kabul maili aldıysanız, size iletilen e-posta adresi ve şifre ile giriş yapabilirsiniz. Ancak, yoğun katılımcı trafiği nedeniyle zaman zaman teknik aksaklıklar yaşanabilir.
+- ‎Böyle bir durumda "Şifremi Unuttum" seçeneğini kullanarak şifrenizi sıfırlayabilir ve tekrar giriş yapmayı deneyebilirsiniz.
+
+**Soru:** Toplantı linkini bulamadım nerden girebilirim?
+**Cevap:**  #**03. Duyurular**  kısmından toplantı linklerine ulaşabilirsiniz.
+
+**Soru:** Merhaba , mail adresime 10million.Al sitesine girmek için şifre ve mail gelmemiş rica etsem sistemden kontrol edebilir misiniz ?
+**Cevap:** Bootcamp başvurusu yaptıysanız, lütfen gelen kutunuzu kontrol edin. Eğer e-postayı orada bulamazsanız, Spam klasörünüzü de kontrol etmenizi öneririz.
+Eğer Spam klasöründe de e-postayı bulamazsanız, sorununuzu ilgili bootcamp'in Zulip kanalındaki **#05. Teknik Sorular** bölümüne yazabilirsiniz.
+
+**Soru:** Github hesabımızı bir yere eklememiz gerekiyor muydu kayıt olurken?
+**Cevap:**Hayır, proje yükleme adımında gerekecek, detaylardan ilerleyen süreçlerde bahsedeceğiz. .
+
+**Soru:** 10million.ai kurslarina giris yapamiyorum.
+**Cevap:** Bootcamp başvurusu yaptıysanız, lütfen gelen kutunuzu kontrol edin. Eğer e-postayı orada bulamazsanız, Spam klasörünüzü de kontrol etmenizi öneririz.
+Eğer Spam klasöründe de e-postayı bulamazsanız, sorununuzu ilgili bootcamp'in Zulip kanalındaki **#05. Teknik Sorular** bölümüne yazabilirsiniz.  
+
+**Soru:** "next chapter" butonunu tıklayınca herhangi bir şey olmuyor. Nasıl çözebiliriz bu durumu?
+**Cevap:** [Courses.10million.ai](http://courses.10million.ai/) platformunda karşılaşabileceğiniz "sertifika alamama", "ilerleme kaydedilememe", "sayfa yüklenmeme", "görsellerin görünmemesi" gibi veya herhangi teknik sorunlarınızı daha hızlı bir şekilde teknik ekibimize iletebilmemiz adına bir form oluşturduk. Aşağıdaki formu doldurarak teknik sorunlarınızı iletebilirsiniz.
+‎[Form Linki](https://forms.gle/vwgAbR4pusb7DHWG7)
+‎
+‎Anlayışınız ve iş birliğiniz için teşekkür ederiz! 
+
+**Soru:** Bu günün yayınını sonradan izlemek mümkün olucak mı?
+**Cevap:** Evet, tüm canlı yayınlarımız kayıt altına alınmaktadır. Dilediğiniz zaman [Youtube](https://www.youtube.com/@TurkishAIHub) kanalımızdan erişebilir ve izleyebilirsiniz.
+
+**Soru:** Merhabalar, Bootcamp takvimini takvimimize otomatik olarak ekleyebileceğimiz bir yer var mı? Yoksa manuel bir şekilde mi kendimiz eklemeliyiz?
+**Cevap:** Merhabalar, takvime otomatik olarak ekleme yapılmamaktadır. Linkler buradan paylaşılacaktır. Takviminizi dilediğiniz şekilde düzenleyebilirsiniz.
+
+**Soru:** Merhaba soyadımda bulunan ı harfi sertifikada ? olarak görünüyor. Ne yapabilirim bu durumun düzelmesi için?
+**Cevap:** Merhaba, Bu sorunu çözmek için aşağıdaki adımları takip edebilirsiniz:
+- **İsim Değişikliği:** Sertifika platformu üzerinde isminizi İngilizce karakterlerle yeniden kaydedin. Bu, hatalı karakterlerin düzelmesine yardımcı olabilir.
+- **Tekrar Kontrol:** İsim değişikliği yaptıktan sonra sertifikalarınızı tekrar kontrol edin.
+Anlayışınız ve sabrınız için teşekkür ederiz.
