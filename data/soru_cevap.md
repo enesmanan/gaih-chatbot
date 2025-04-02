@@ -24,12 +24,35 @@
 **Soru:** Git kullanmayı bilmiyorum, kodumu GitHub’a nasıl yüklerim?  
 **Cevap:** Web arayüzü ile yükleme yapmak için bu videoyu izleyerek kolayca öğrenebilirsiniz: [YouTube Videosu](https://www.youtube.com/watch?v=gJb1XebzNeo)  
 
+**Soru:** Yapay zeka alanına yönelmek istiyorum. Yazılım geçmişim var ancak hangi konulara öncelik vermem gerektiği konusunda yol gösterir misiniz? Hangi temel kavramları öğrenmeli ve hangi kaynakları takip etmeliyim?  
+**Cevap:** Roadmap'ler başlangıç için faydalı olabilir ve hangi konulara odaklanmanız gerektiğini gösterebilir. Örnek olarak [AI & Data Scientist Roadmap](https://roadmap.sh/ai-data-scientist) bağlantısını inceleyebilirsiniz. Bunun yanı sıra, istatistik ve matematik temeli oldukça önemli. Yolculuğunuza bu alanlara odaklanarak başlayabilirsiniz. Eğer topluluklar veya mentörlerden destek almak isterseniz, ilgili forum ve platformlardaki kaynaklara göz atabilirsiniz. Özellikle, mentörlerin önerdiği kaynaklar yol gösterici olabilir. Öğrenme sürecinde acele etmemek, konuları sindire sindire ilerlemek ve kendi hızınıza göre öğrenmek uzun vadede daha faydalı olacaktır.
+
+**Soru:** Projeyi tamamen İngilizce yapmamda bir sakınca var mı?  
+**Cevap:** Projeni tamamen İngilizce yapabilirsin, herhangi bir sorun yok.
+
+**Soru:** Projeyi tamamlayanlar varmış galiba, ben daha bu proje için nereye adım atacağımı bilemiyorum 😁 Python giriş dersi ile bir proje yazamam değil mi?  
+**Cevap:** İstersen projeyi bazı adımlara böl ve parça parça ilerle. Bu sayede problem daha az karmaşık hale gelebilir. Sırasıyla projede beklenen adımlara göre kalan günlere ayırıp, internetten araştırmalar yaparak deneyebilirsin. Çok fazla örnek mevcut. Böylece hem adım adım öğrenmiş hem de projeyi tamamlamış olursun. Takıldığın yerlerde buradan hem bana hem de diğer bootcamp katılımcılarına sorabilirsin. Elimden geldiğince yardımcı olurum! ✨
+
+**Soru:** Yapay zekadan yardım alarak projeyi tamamlamamda bir sorun olur mu? Her şeyi kopyala-yapıştır yapmadan, anlayarak ilerlemeye çalışıyorum. Ancak algoritma bilgim yok ve tamamen yapay zeka yardımı olmadan projeyi tamamlayamayacağımı düşünüyorum.  
+**Cevap:** Sizin anlattığınız şekilde yapay zeka kullanımı tam olarak istediğimiz bir şey. Tabii ki yapay zekadan yardım alabilirsiniz, ancak bunu öğrenmek için kullanmanız çok daha doğru olacaktır. Her şeyi doğrudan kopyala-yapıştır yapmakdan olabildiğine kaçınmak iyi olur. 
+
+**Soru:** Gerçek hayatta bir sorunu çözmek için proje yaparken hangi kütüphanelerin ve modüllerin işe yaradığını anlayacak seviyeye gelmek için bunları ezberlememiz mi gerekiyor? Yoksa sektörde çalışan kişiler proje yazarken araştırma yaparak mı ilerliyor? Senior geliştiriciler bir soruna nasıl yaklaşıyor? Ayrıca, kod yazarken bazı komplike ifade biçimlerini düşünmede zorlandığımızı hissediyoruz. Bunun sebebi algoritma bilgisi eksikliği mi, yoksa farklı bir yaklaşım mı gerekiyor?  
+**Cevap:** Gerçek hayattaki sorunları çözen kişiler genellikle o alanda deneyim kazanarak ilerliyor. Birçok farklı proje üzerinde çalıştıkça, zamanla hangi kütüphaneleri ve yöntemleri kullanmaları gerektiğini daha iyi kestirebiliyorlar. Ancak, tamamen yeni bir sorunla karşılaştıklarında araştırma yaparak çözüm üretmeye çalışıyorlar.  Sektörde çalışan biri her detayı ezbere bilmese de, daha önce benzer projelerle uğraştığı için hangi teknolojileri veya yöntemleri kullanması gerektiğine dair iyi bir fikre sahip oluyor. Kodları anlamaya gelince, özellikle karmaşık yapıları çözebilmek için bol bol pratik yapmak gerekiyor. Farklı insanların yazdığı kodları incelemek ve anlamaya çalışmak, kendi kod yazma becerilerinizi de geliştirebilir. Zamanla bu tür daha komplike yazım biçimlerine aşinalık kazanırsınız.
+
+**Soru:** Aldığımız online eğitim faydalı olsa da lisansım bilgisayar veya yazılım tabanlı olmadığı için projeyi yapabilme kapasitemin yetersiz kaldığını hissediyorum. Algoritmaları projelerde nasıl kullanacağımızı nasıl anlayabiliriz? Bu konuda önerebileceğiniz temiz bir eğitim kaynağı (PDF, site vb.) var mı? Ayrıca, farklı projelerde hangi algoritmayı kullanmam gerektiğini nasıl anlayacağımı bilmiyorum. Bu konuda temel bir eğitim verilecek mi?  
+**Cevap:** 👋 Öncelikle bu soruyu sorduğun için teşekkür ederim. Lisans eğitiminin bilgisayar veya yazılım tabanlı olmaması kesinlikle bir engel değil. Bu eğitim başlangıç seviyesinde olduğu için herkesin rahatlıkla takip edebileceği ve projeyi yapabileceği şekilde planlandı. Algoritmaların gerçek hayattaki projelerde nasıl kullanıldığını anlamak için en önemli nokta deneyim kazanmak. Ne kadar farklı problemlerle uğraşıp çözümler geliştirir ve kaynak taramaları yaparsan, o kadar gelişirsin. Gireceğin iki eğitim webinarında, projede kullanılan algoritmaların nasıl seçildiği ve hangi soruna hangi algoritmanın uygun olduğu gibi konulara değinilecek. Bu süreçte incelemek istersen, Prof. Dr. Şadi Evren Şeker’in hazırladığı [Bilgisayar Kavramları](https://bilgisayarkavramlari.com/) sitesinden algoritmalar hakkında bilgi alabilir ve YouTube’daki ders anlatımlarına göz atabilirsin.    
 
 
-**Soru:** Merhaba hocam,
-Ben kodu epeyce ilerlettim ve açıklamalar eklemeyi düşünüyorum, her satıra açıklama yapmalı mıyım? yoksa bunu readme dosyasının içinde daha detaylıca açıklamalı mıyım?
 
-**Cevap:** Selam , satırlar arasında kısa kısa açıklamalar ekleyebilirsin. Readme'de ise daha detaylı bir açıklama yaparsan daha iyi olur.
+
+
+
+
+
+
+**Soru:** Ben kodu epeyce ilerlettim ve açıklamalar eklemeyi düşünüyorum, her satıra açıklama yapmalı mıyım? yoksa bunu readme dosyasının içinde daha detaylıca açıklamalı mıyım?
+**Cevap:** Satırlar arasında kısa kısa açıklamalar ekleyebilirsin. Readme'de ise daha detaylı bir açıklama yaparsan daha iyi olur.
+
 **Soru:** Merhaba, readme dosyamı proje pdf i türkçe olduğu için türkçe oluşturmuştum. Fakat şuan yurtdışına bir iş başvurusu yapmak istiyorum ve bu projeyi de kişisel projem olarak cv me eklemek istiyorum. Readme yi tamamen aynı şekilde tutup , sadece ingilizceye çevirebilir miyim?
 **Cevap:** Selamlar, bir sorun teşkil etmiyor lakin incelemelerimiz bittikten sonra yaparsanız sizler için daha iyi olur diye düşünüyorum.
 
