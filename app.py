@@ -15,7 +15,15 @@ if not api_key:
 
 genai.configure(api_key=api_key)
 
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel(
+    'gemini-2.0-flash',
+    #generation_config=genai.types.GenerationConfig(
+    #    temperature=0.5,           
+    #    max_output_tokens=2048,    
+    #    top_p=0.9,                 
+    #    top_k=40,                  
+    #)
+)
 
 
 def load_database():
