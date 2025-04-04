@@ -7,32 +7,29 @@ from langchain_community.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 load_dotenv()
-api_key = "AIzaSyA5tm44ev1KhCDYQdPS7rL3mw7kqJsheHw"
+api_key = os.getenv("GOOGLE_API_KEY")
 
 if not api_key:
     print("Error: GOOGLE_API_KEY not found. Please check your .env file.")
     sys.exit(1)
 
 genai.configure(api_key=api_key)
-
+print("apikey:",api_key)
 model = genai.GenerativeModel(
-    'gemini-2.0-flash-lite',
-    #generation_config=genai.types.GenerationConfig(
-    #    temperature=0.5,           
-    #    max_output_tokens=2048,    
-    #    top_p=0.9,                 
-    #    top_k=40,                  
-    #)
+    'gemini-2.0-flash',
+    generation_config=genai.types.GenerationConfig(
+       temperature=0.8,                          
+    )
 )
 
 
 def load_database():
     # Use Google Embedding model
     embedding_function = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001", 
-        google_api_key=api_key
-    )
-
+    model="models/embedding-001",
+    google_api_key=api_key,
+    task_type="SEMANTIC_SIMILARITY" 
+)
     # Load the database
     db_path = "./chroma_db"
     if not os.path.exists(db_path):
@@ -55,20 +52,19 @@ def get_answer_from_doc(doc,quest):
     _find_start = doc.find("**Cevap",_find)
     if (_find_anwser < 0):
         _find_anwser = len(doc)
-    print(_find_start,_find_anwser,"bulundu:",doc[_find_start:_find_anwser])
     return doc[_find_start:_find_anwser].replace("**Cevap:**","Cevap:").replace("\n","")
 def get_answer(file,query, vectordb, top_k=3):
     with open(file, "r", encoding="utf-8") as f:
         md_content = f.read()
-    
     retrieval_results = vectordb.similarity_search(query, k=top_k)
     context = "\n\n".join(["Soru:" + str(doc.page_content) + get_answer_from_doc(md_content,str(doc.page_content)) for doc in retrieval_results])
-    print("-------",context,"------")
+    # print("-------",context,"------")
     prompt = f"""
     
-Sen Global AI Hub ekibi tarafından geliştirilen, Global AI Hub'ın akıl küpü asistanısın. 
+Sen Global AI Hub'ın akıl küpü chatbotusun. 
 Aşağıdaki bağlam bilgisini kullanarak kullanıcının sorusuna net, doğru ve yardımsever bir şekilde yanıt ver. 
-Eğer cevabı bağlam bilgisinde bulamıyorsan, bunu dürüstçe belirt (örn: Malesef bunu bilemiyorum.) ve bootcamp hakkında genel bilgi vermeye çalış .
+Eğer cevabı bağlam bilgisinde bulamıyorsan, bunu dürüstçe belirt ve bootcamp hakkında genel bilgi vermeye çalış.
+
 
 BAĞLAM BİLGİSİ:
 {context}
@@ -78,12 +74,10 @@ KULLANICI SORUSU:
 
 YANITINIZ:"""
 
-    # Get response from Gemini model
     response = model.generate_content(prompt)
 
     return response.text
 
-import time
 def main():
     print("=" * 50)
     print("Global AI Hub Chatbot'una Hoş Geldiniz!")
@@ -99,10 +93,7 @@ def main():
             print("Global AI Hub Chatbot'undan çıkılıyor. İyi günler!")
             break
         try:
-            now = time.time()
-            answer = get_answer("data/soru_cevap.md",query, vectordb,top_k=5)
-            finsih= time.time()
-            print(finsih- now)
+            answer = get_answer("data/soru_cevap.md",query, vectordb,top_k=7)
             print("\nCevap:", answer)
         except Exception as e:
             print(f"Bir hata oluştu: {e}")
