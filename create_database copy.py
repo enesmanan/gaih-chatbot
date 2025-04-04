@@ -1,11 +1,10 @@
 import os
-
+import re
 import chromadb
 import google.generativeai as genai
 import markdown
 from dotenv import load_dotenv
 from langchain.schema import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
@@ -34,19 +33,18 @@ def create_database():
     # Read markdown data file
     with open("data/soru_cevap.md", "r", encoding="utf-8") as f:
         md_content = f.read()
+    
+    pattern = r"\*\*Soru:\*\*(.*?)\*\*Cevap:\*\*"
+    matches = re.findall(pattern, md_content, re.DOTALL)
+
+    chunks = [str(match.strip()).replace("\n","") for match in matches]
+
 
     # Clean data from markdown format
-    text_content = markdown_to_text(md_content)
 
-    # Create text splitter
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=200,
-        length_function=len,
-    )
+
 
     # Split text into chunks
-    chunks = text_splitter.split_text(text_content)
     documents = [Document(page_content=chunk) for chunk in chunks]
 
     print(f"{len(documents)} document chunks created.")
