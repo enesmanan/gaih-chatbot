@@ -89,7 +89,7 @@ def main():
             print("Global AI Hub Chatbot'undan çıkılıyor. İyi günler!")
             break
         try:
-            answer = get_answer(query, vectordb)
+            answer = get_answer(query, vectordb,top_k=7)
             print("\nCevap:", answer)
         except Exception as e:
             print(f"Bir hata oluştu: {e}")
