@@ -175,3 +175,8 @@ Eğer Spam klasöründe de e-postayı bulamazsanız, sorununuzu ilgili bootcamp'
 **Cevap:** Merhaba, Bu sorunu çözmek için aşağıdaki adımları takip edebilirsiniz:
 - **İsim Değişikliği:** Sertifika platformu üzerinde isminizi İngilizce karakterlerle yeniden kaydedin. Bu, hatalı karakterlerin düzelmesine yardımcı olabilir.
 - **Tekrar Kontrol:** İsim değişikliği yaptıktan sonra sertifikalarınızı tekrar kontrol edin.
+
+
+**Soru:** Bana atanan Mentorumun kim olduğunu nereden öğrenebilirim?
+**Cevap:** Size bir mentor atandığında, yalnızca sizin erişiminize açık özel bir mentor kanalı oluşturulacaktır. Bu kanal üzerinden mentorunuzu görebilir ve varsa sorularınızı doğrudan iletebilirsiniz.
+
