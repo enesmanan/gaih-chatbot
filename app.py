@@ -1,11 +1,16 @@
 import os
 import sys
+import uuid
+from datetime import datetime
 
 import google.generativeai as genai
+import markdown
 from dotenv import load_dotenv
-from langchain_community.vectorstores import Chroma
+from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_chroma import Chroma
 
+# ----- Configuration and Setup -----
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 
@@ -16,21 +21,20 @@ if not api_key:
 genai.configure(api_key=api_key)
 
 model = genai.GenerativeModel(
-    'gemini-2.0-flash',
+    "gemini-2.0-flash",
     generation_config=genai.types.GenerationConfig(
-        temperature=0.57         
-    #    max_output_tokens=2048,    
-    #    top_p=0.9,                 
-    #    top_k=40,                  
-    )
+        temperature=0.57
+        #    max_output_tokens=2048,
+        #    top_p=0.9,
+        #    top_k=40,
+    ),
 )
 
-
+# ----- Database Functions -----
 def load_database():
     # Use Google Embedding model
     embedding_function = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001", 
-        google_api_key=api_key
+        model="models/embedding-001", google_api_key=api_key
     )
 
     # Load the database
@@ -39,15 +43,12 @@ def load_database():
         print("Database not found. Please run 'create_database.py' first.")
         print("Command: python create_database.py")
         sys.exit(1)
-    
-    vectordb = Chroma(
-        persist_directory=db_path, 
-        embedding_function=embedding_function
-    )
-    
+
+    vectordb = Chroma(persist_directory=db_path, embedding_function=embedding_function)
+
     return vectordb
 
-
+# ----- RAG & AI Functions -----
 def get_answer(query, vectordb, top_k=3):
     # Get similar documents from vector database
     retrieval_results = vectordb.similarity_search(query, k=top_k)
@@ -58,7 +59,8 @@ def get_answer(query, vectordb, top_k=3):
     
 Sen Global AI Hub'ın akıl küpü chatbotusun. 
 Aşağıdaki bağlam bilgisini kullanarak kullanıcının sorusuna net, doğru ve yardımsever bir şekilde yanıt ver. 
-Eğer cevabı bağlam bilgisinde bulamıyorsan, bunu dürüstçe belirt ve bootcamp hakkında genel bilgi vermeye çalış.
+Eğer cevabı bağlam bilgisinde bulamıyorsan, bunu dürüstçe belirt ve Global AI Hub bootcamp'leri hakkında genel bilgi vermeye çalış.
+Bağlam içinde olmayan Python, Javascript veya herhangi bir programlama dili kodlarını gösterme veya açıklama. Bunun yerine gene Global AI Hub bootcamp'leri hakkında genel bilgi vermeye çalış.
 
 BAĞLAM BİLGİSİ:
 {context}
@@ -73,27 +75,143 @@ YANITINIZ:"""
 
     return response.text
 
+# ----- Helper Functions -----
+# Markdown processing function
+def render_markdown(text):
+    # Convert Markdown format to HTML
+    html = markdown.markdown(
+        text,
+        extensions=[
+            "markdown.extensions.extra",
+            "markdown.extensions.codehilite",
+            "markdown.extensions.smarty",
+            "markdown.extensions.nl2br",
+            "markdown.extensions.sane_lists",
+        ],
+    )
+    return html
 
-def main():
-    print("=" * 50)
-    print("Global AI Hub Chatbot'una Hoş Geldiniz!")
-    print("Bootcamp hakkında sorularınızı sorabilirsiniz.")
-    print("Çıkmak için 'q' veya 'çıkış' yazın.")
-    print("=" * 50)
+# ----- Flask Application Setup -----
+app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Secret key for session
 
-    vectordb = load_database()
+# Initialize vector database
+vectordb = load_database()
 
-    while True:
-        query = input("\nSorunuz: ")
-        if query.lower() in ["q", "çıkış", "exit", "quit"]:
-            print("Global AI Hub Chatbot'undan çıkılıyor. İyi günler!")
-            break
-        try:
-            answer = get_answer(query, vectordb,top_k=10)
-            print("\nCevap:", answer)
-        except Exception as e:
-            print(f"Bir hata oluştu: {e}")
+# Dictionary to store session information
+conversations = {}
+
+# ----- Flask Routes -----
+@app.route("/")
+def index():
+    # Check user session ID, create a new session if not exists
+    if "session_id" not in session:
+        session_id = str(uuid.uuid4())
+        session["session_id"] = session_id
+        conversations[session_id] = {
+            "id": session_id,
+            "title": f"New Conversation {datetime.now().strftime('%d.%m.%Y %H:%M')}",
+            "created_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
+            "messages": [],
+        }
+
+    # Get current session information
+    session_id = session["session_id"]
+    current_conversation = conversations.get(
+        session_id,
+        {
+            "id": session_id,
+            "title": f"New Conversation {datetime.now().strftime('%d.%m.%Y %H:%M')}",
+            "created_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
+            "messages": [],
+        },
+    )
+
+    # List all sessions
+    all_conversations = [conv for conv in conversations.values()]
+
+    return render_template(
+        "index.html",
+        conversation_history=current_conversation.get("messages", []),
+        conversations=all_conversations,
+        current_session=session_id,
+        renderMarkdown=render_markdown,
+    )  # Markdown processing function
 
 
+@app.route("/send_message", methods=["POST"])
+def send_message():
+    data = request.json
+    user_message = data.get("message", "")
+
+    # Save user message
+    session_id = session.get("session_id")
+    if session_id not in conversations:
+        conversations[session_id] = {
+            "id": session_id,
+            "title": f"Conversation {datetime.now().strftime('%d.%m.%Y %H:%M')}",
+            "created_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
+            "messages": [],
+        }
+
+    # Save messages
+    conversations[session_id]["messages"].append(
+        {"role": "user", "content": user_message}
+    )
+
+    # Set first message as conversation title
+    if len(conversations[session_id]["messages"]) == 1:
+        # Create title from user's first message (max 30 characters)
+        title = user_message[:30] + "..." if len(user_message) > 30 else user_message
+        conversations[session_id]["title"] = title
+
+    # Get answer
+    try:
+        bot_response = get_answer(user_message, vectordb, top_k=10)
+
+        # Save bot response
+        conversations[session_id]["messages"].append(
+            {"role": "bot", "content": bot_response}
+        )
+
+        # Return all conversations as JSON
+        all_conversations = [conv for conv in conversations.values()]
+
+        return jsonify({"response": bot_response, "conversations": all_conversations})
+
+    except Exception as e:
+        return jsonify(
+            {
+                "response": f"Sorry, an error occurred: {str(e)}",
+                "conversations": [conv for conv in conversations.values()],
+            }
+        )
+
+
+@app.route("/new_chat", methods=["POST"])
+def new_chat():
+    # Create new session
+    session_id = str(uuid.uuid4())
+    session["session_id"] = session_id
+    conversations[session_id] = {
+        "id": session_id,
+        "title": f"New Conversation {datetime.now().strftime('%d.%m.%Y %H:%M')}",
+        "created_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
+        "messages": [],
+    }
+
+    return jsonify({"success": True})
+
+
+@app.route("/conversation/<session_id>")
+def load_conversation(session_id):
+    if session_id in conversations:
+        session["session_id"] = session_id
+        return redirect(url_for("index"))
+    else:
+        return redirect(url_for("index"))
+
+
+# ----- Application Entry Point -----
 if __name__ == "__main__":
-    main()
+    app.run(debug=True, host="0.0.0.0", port=5000)

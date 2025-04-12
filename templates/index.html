@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-header">
+            <div class="header-left">
+                <button class="hamburger-menu" onclick="toggleSidebar()" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="title">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Global AI Hub Logo" class="papara-logo">
+                    <span>Asistan</span>
+                </div>
+            </div>
+            <a href="https://github.com/enesmanan/gaih-chatbot" target="_blank" class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>Kaynak Kod</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Geçmiş Görüşmeler</h2>
+                <button onclick="toggleSidebar()">×</button>
+            </div>
+            <button onclick="startNewChat()" class="new-chat-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                <span>Yeni Görüşme</span>
+            </button>
+            <div class="conversation-list">
+                {% for conv in conversations %}
+                    <a href="{{ url_for('load_conversation', session_id=conv.id) }}" 
+                       class="conversation-item {% if conv.id == current_session %}active{% endif %}">
+                        <div class="conversation-title">{{ conv.title }}</div>
+                        <div class="conversation-date">{{ conv.created_at }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-messages" id="chat-messages">
+            {% if not conversation_history %}
+                <div class="message bot welcome">
+                    <div class="message-content markdown-body">
+                        {{ renderMarkdown("Merhaba! Ben Global AI Hub'ın akıl küpü asistanıyım. Bootcamp hakkında sorularınızı yanıtlamaya hazırım. Size nasıl yardımcı olabilirim?") | safe }}
+                    </div>
+                </div>
+            {% endif %}
+            
+            {% for message in conversation_history %}
+                <div class="message {% if message.role == 'user' %}user{% else %}bot{% endif %}">
+                    <div class="message-content markdown-body">
+                        {{ renderMarkdown(message.content) | safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input">
+            <input type="text" 
+                   id="user-input" 
+                   placeholder="Bootcamp hakkında bir soru sorun..." 
+                   autocomplete="off"
+                   autofocus>
+            <button onclick="sendMessage()" class="send-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Marked.js configuration
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    try {
+                        return hljs.highlight(code, { language: lang }).value;
+                    } catch (__) {}
+                }
+                return code;
+            },
+            breaks: true,
+            gfm: true,
+            headerIds: true,
+            mangle: false,
+            pedantic: false,
+            sanitize: false,
+            smartLists: true,
+            smartypants: true
+        });
+        
+        // Custom renderMD function
+        function renderMD(content) {
+            return marked.parse(content);
+        }
+
+        // Toggle sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Start new chat
+        function startNewChat() {
+            fetch('/new_chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      window.location.href = '/';
+                  }
+              })
+              .catch(error => {
+                  console.error('Error starting new chat:', error);
+              });
+        }
+
+        // Send message
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                const chatMessages = document.getElementById('chat-messages');
+                
+                // Add user message
+                chatMessages.insertAdjacentHTML('beforeend', `
+                    <div class="message user">
+                        <div class="message-content markdown-body">
+                            ${renderMD(message)}
+                        </div>
+                    </div>
+                `);
+                
+                // Clear and disable input
+                input.value = '';
+                input.disabled = true;
+                
+                // Add loading indicator
+                const loadingIndicator = addLoadingIndicator();
+                
+                try {
+                    const response = await fetch('/send_message', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message: message }),
+                    });
+                    
+                    const data = await response.json();
+                    
+                    // Remove loading indicator
+                    loadingIndicator.remove();
+                    
+                    // Add bot response
+                    chatMessages.insertAdjacentHTML('beforeend', `
+                        <div class="message bot">
+                            <div class="message-content markdown-body">
+                                ${renderMD(data.response)}
+                            </div>
+                        </div>
+                    `);
+                    
+                    // Update sidebar
+                    updateSidebar(data.conversations);
+                    
+                    // Highlight code blocks
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightBlock(block);
+                    });
+                } catch (error) {
+                    loadingIndicator.remove();
+                    console.error('Error:', error);
+                } finally {
+                    // Re-enable input
+                    input.disabled = false;
+                    input.focus();
+                }
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        // Loading indicator
+        function addLoadingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'message bot loading';
+            loadingDiv.innerHTML = `
+                <div class="message-content">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(loadingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return loadingDiv;
+        }
+        
+        // Update sidebar content
+        function updateSidebar(conversations) {
+            const conversationList = document.querySelector('.conversation-list');
+            conversationList.innerHTML = conversations.map(conv => `
+                <a href="/conversation/${conv.id}" 
+                   class="conversation-item ${conv.id === '{{ current_session }}' ? 'active' : ''}">
+                    <div class="conversation-title">${conv.title}</div>
+                    <div class="conversation-date">${conv.created_at}</div>
+                </a>
+            `).join('');
+        }
+        
+        // Enter key to send message
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+        
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    </script>
+</body>
+</html>
