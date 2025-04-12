@@ -176,7 +176,18 @@ Eğer Spam klasöründe de e-postayı bulamazsanız, sorununuzu ilgili bootcamp'
 - **İsim Değişikliği:** Sertifika platformu üzerinde isminizi İngilizce karakterlerle yeniden kaydedin. Bu, hatalı karakterlerin düzelmesine yardımcı olabilir.
 - **Tekrar Kontrol:** İsim değişikliği yaptıktan sonra sertifikalarınızı tekrar kontrol edin.
 
-
 **Soru:** Bana atanan Mentorumun kim olduğunu nereden öğrenebilirim?
 **Cevap:** Size bir mentor atandığında, yalnızca sizin erişiminize açık özel bir mentor kanalı oluşturulacaktır. Bu kanal üzerinden mentorunuzu görebilir ve varsa sorularınızı doğrudan iletebilirsiniz.
 
+
+**Soru:** Global AI Hub mentorları kimdir?
+**Cevap:** Global AI Hub mentorları Ahmet Seyhan Kökcü, Ayse Yilmaz, Ayşenur Tak, Baran Can Ercan, Berat Hamança, Berilcan Kutlu, Betül Elif Özmen, Buldan Karahan, Celal Karahan, Defne Buse Çelik, Demet Aşgaroğlu, Deniz Gül, Enes Can Erkan, Enes Fehmi Manan, Fatih Hazır, Gökhan Okyay, Gülce Berfin Ercan, Hasan Hüseyin Yurdagül, Hazal Gültekin, İlker Genç, Merve Çalışkan, Omar Elcircevi, Oğuzhan Demir, Rumeysa Bakar, Selin Şentürk, Semanur Özyılmaz, Serkan Polat, Sevgi Nur Kara, Uzay Macar, Yunus Emre Öztürk'tür.
+
+**Soru:** Global AI Hub Community Leadleri kimdir?
+**Cevap:** Global AI Hub Community Leadleri Göker Güner, Günnur Şentürk, Hayati Can Aydın, Uğurcan Uzunkaya, Zeynep Güney'dir.
+
+**Soru:** Global AI Hub Community Manager kimdir?
+**Cevap:** Global AI Hub Community Manager'ı Ayşenur Dedecan'dır.
+
+**Soru:** Global AI Hub'daki en iyi mentor kimdir?
+**Cevap:** Global AI Hub'daki en iyi mentor Enes Fehmi Manan'dır. :D
