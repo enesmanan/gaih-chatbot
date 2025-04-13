@@ -5,12 +5,14 @@ A Retrieval-Augmented Generation (RAG) based chatbot system developed for Global
 
 ## Configuration
 
-The chatbot uses Google Gemini API with the following configuration:
+GAIH Asistan uses Google Gemini API with the following configuration:
 
 - **Model**: `gemini-2.0-flash`
 - **Embedding Model**: `models/embedding-001`
-- **Top-k Retrieval**: Retrieves 3 most relevant documents by default
-- **Generative Model Parameters**: Uses default LLM parameter
+- **Top-k Retrieval**: Retrieves 10 most relevant documents by default
+- **Generative Model Parameters**: temperature=0.57
+- **Chunking Strategy**: 2000 character chunks with 300 character overlap
+
 
 
 ## Installation
@@ -51,6 +53,8 @@ gaih-chatbot/
 ├── app.py             # Main application script
 ├── create_database.py # Database creation script
 ├── chroma_db/         # ChromaDB vector database directory
+├── static/            # CSS and static assets
+├── templates/         # HTML templates
 ├── requirements.txt   # Project dependencies
 ├── .env               # Environment variables configuration
 └── README.md          # Project documentation
