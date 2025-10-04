@@ -1,4 +1,4 @@
-## Global AI Hub Chatbot (RAG with Gemini + Chroma)
+# Global AI Hub Chatbot 
 
 A production-ready, Retrieval-Augmented Generation (RAG) chatbot built for Global AI Hub. It indexes Q&A content, retrieves the most relevant chunks with Chroma, and generates helpful answers using Google Gemini.
 
