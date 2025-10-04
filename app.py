@@ -11,6 +11,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 from chromadb.config import Settings
 from create_database import create_database
+import shutil
 
 # ----- Configuration and Setup -----
 load_dotenv()
@@ -60,7 +61,12 @@ def load_database():
         )
         return vectordb
     except Exception as e:
-        print(f"Failed to load vector DB ({e}). Rebuilding...")
+        print(f"Failed to load vector DB ({e}). Cleaning and rebuilding...")
+        try:
+            if os.path.exists(db_path):
+                shutil.rmtree(db_path)
+        except Exception as rm_err:
+            print(f"Warning: failed to remove '{db_path}': {rm_err}")
         try:
             create_database()
             vectordb = Chroma(

@@ -1,4 +1,5 @@
 import os
+import shutil
 
 import chromadb
 import google.generativeai as genai
@@ -57,11 +58,19 @@ def create_database():
         model="models/text-embedding-004", google_api_key=api_key
     )
 
+    # Ensure a clean directory before (re)building the vector database
+    db_path = "./chroma_db"
+    if os.path.exists(db_path):
+        try:
+            shutil.rmtree(db_path)
+        except Exception as e:
+            print(f"Warning: failed to remove existing '{db_path}': {e}")
+
     # Create vector database with fixed collection name and no telemetry
     vectordb = Chroma.from_documents(
         documents=documents,
         embedding=embedding_function,
-        persist_directory="./chroma_db",
+        persist_directory=db_path,
         collection_name="gaih-chatbot",
         client_settings=Settings(anonymized_telemetry=False),
     )
