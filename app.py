@@ -34,7 +34,7 @@ model = genai.GenerativeModel(
 def load_database():
     # Use Google Embedding model
     embedding_function = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001", google_api_key=api_key
+        model="models/text-embedding-004", google_api_key=api_key
     )
 
     # Load the database
