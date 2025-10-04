@@ -8,8 +8,7 @@ import markdown
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_chroma import Chroma
-from chromadb.config import Settings
+from langchain_community.vectorstores import Chroma
 from create_database import create_database
 import shutil
 
@@ -43,7 +42,6 @@ def load_database():
     # Load the database
     db_path = "./chroma_db"
     collection_name = "gaih-chatbot"
-    client_settings = Settings(anonymized_telemetry=False)
     if not os.path.exists(db_path):
         try:
             print("Database not found. Creating now...")
@@ -57,7 +55,6 @@ def load_database():
             persist_directory=db_path,
             embedding_function=embedding_function,
             collection_name=collection_name,
-            client_settings=client_settings,
         )
         return vectordb
     except Exception as e:
@@ -73,7 +70,6 @@ def load_database():
                 persist_directory=db_path,
                 embedding_function=embedding_function,
                 collection_name=collection_name,
-                client_settings=client_settings,
             )
             return vectordb
         except Exception as e2:

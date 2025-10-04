@@ -7,8 +7,7 @@ import markdown
 from dotenv import load_dotenv
 from langchain.schema import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_chroma import Chroma
-from chromadb.config import Settings
+from langchain_community.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 
@@ -66,13 +65,12 @@ def create_database():
         except Exception as e:
             print(f"Warning: failed to remove existing '{db_path}': {e}")
 
-    # Create vector database with fixed collection name and no telemetry
+    # Create vector database with fixed collection name
     vectordb = Chroma.from_documents(
         documents=documents,
         embedding=embedding_function,
         persist_directory=db_path,
         collection_name="gaih-chatbot",
-        client_settings=Settings(anonymized_telemetry=False),
     )
 
     print("Database successfully created and saved to 'chroma_db' folder.")
