@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
+from chromadb.config import Settings
+from create_database import create_database
 
 # ----- Configuration and Setup -----
 load_dotenv()
@@ -39,14 +41,38 @@ def load_database():
 
     # Load the database
     db_path = "./chroma_db"
+    collection_name = "gaih-chatbot"
+    client_settings = Settings(anonymized_telemetry=False)
     if not os.path.exists(db_path):
-        print("Database not found. Please run 'create_database.py' first.")
-        print("Command: python create_database.py")
-        sys.exit(1)
+        try:
+            print("Database not found. Creating now...")
+            create_database()
+        except Exception as e:
+            print(f"Failed to create database: {e}")
+            sys.exit(1)
 
-    vectordb = Chroma(persist_directory=db_path, embedding_function=embedding_function)
-
-    return vectordb
+    try:
+        vectordb = Chroma(
+            persist_directory=db_path,
+            embedding_function=embedding_function,
+            collection_name=collection_name,
+            client_settings=client_settings,
+        )
+        return vectordb
+    except Exception as e:
+        print(f"Failed to load vector DB ({e}). Rebuilding...")
+        try:
+            create_database()
+            vectordb = Chroma(
+                persist_directory=db_path,
+                embedding_function=embedding_function,
+                collection_name=collection_name,
+                client_settings=client_settings,
+            )
+            return vectordb
+        except Exception as e2:
+            print(f"Rebuild failed: {e2}")
+            sys.exit(1)
 
 # ----- RAG & AI Functions -----
 def get_answer(query, vectordb, top_k=3):
@@ -214,4 +240,5 @@ def load_conversation(session_id):
 
 # ----- Application Entry Point -----
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)
