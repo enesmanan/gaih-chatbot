@@ -1,7 +1,7 @@
 gunicorn
 google-generativeai==0.8.3
 python-dotenv==1.0.1
-chromadb==1.0.9
+chromadb==0.4.24
 langchain==0.3.11
 langchain-community==0.3.11
 langchain-google-genai==2.0.10
